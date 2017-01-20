@@ -72,3 +72,56 @@ select months_between('18-jan-2017', '18-jan-2016') from dual;
 
 //Adds 12 months for the date 18-jan-2016 and displays.
 select add_months('18-jan-2016', 12) from dual;
+
+//Query to display the dept_id and the sum of the salary for all the employees in each department.
+select dept_id, sum(salary) from employees group by dept_id;
+
+//Query to display the dept_id and the least salary of each department.
+select dept_id, min(salary) from employees group by dept_id;
+
+//Displaying the dept_id and heighest salary of each department for all departments whose dept_id is>30.
+select dept_id, max(salary) from employees where dept_id>20 group by dept_id;
+
+//Query to display the dept_id , the maximum salary for all the employees where maximum salary is greater than 100000.
+select dept_id, max(salary) from employees having max(salary)>100000 group by dept_id;
+
+//Query to display dept_id and maximum salary of all employees whose dept_id is greater than 10 and having maximum salary greater than 120000 for each department, while displaying display the date in descending order with respect to dept_id.
+select dept_id, max(salary) from employees where dept_id>10 having max(salary)>120000 group by dept_id order by dept_id desc;
+
+//Query to display the lastname, firstname and salary of all employees who earns more than tendulkar.
+select lastname, firstname from employees where salary>(select salary from employee where lastname='Tendulkar');
+
+//Query to display the employee id of all employees whose dept_id in employees table is equal to dept_id in departments table.
+select id from employees where dept_id in (select dept_id from departments);
+
+//Query to display the employees id and the department name for all the employees whose dept_id in the employees table is equal to the department id in the department table.
+select id, dept_id from employese, departments where employee.dept_id=department.dept_id;
+select id, dept_id from employees e, departments d where employee.dept_id=department.dept_id;
+
+//Query to display the employees id and the department name for all the employees whose dept_id in the employees table is equal to the department id in the department table using 'inner join' keyword.
+select id, dept_id from employees inner join departments on employee.dept_id=department.dept_id;
+
+//Query to display all the details from employee table and department table by using natural join keyword.
+select * from employees natural join departments;
+
+//Query to display employees table cross join with departments table.
+select * from employees cross join departments;
+
+//Employees table left outer join with Department table
+select * from employees left outer join departments on employee.dept_id=department.dept_id;
+
+//Employees table right outer join with Department table
+select * from employees right outer join departments on employee.dept_id=department.dept_id;
+
+//Employees table full outer join with Department table
+select * from employees full outer join departments on employee.dept_id=department.dept_id;
+
+//Query to display all the rows from employees and departments table.
+select * from employees, departments;
+
+//Query to delete the rows form employees table where employees dept_id is 30 and lastname of the employee is 'Kohli'.
+delete from employees where dept_id=30 and lastname='Kohli';
+
+//Query to set department name to 'EXECUTIVE' where dept_id=10;
+update departments set department_name='EXECUTIVE' where dept_id=10;
+
