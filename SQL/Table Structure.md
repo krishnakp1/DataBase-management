@@ -11,7 +11,7 @@ Address varchar(30)
 );
 
 ##Database:
-Id | FirstName | LastName | Age | PhoneNo | Salary | Address | Dept_id
+Id | FirstName | LastName | Age | PhoneNo | Salary | Address | Dept_Id
 |:--:|:--------:|:--------:|:---:|:-------:|:------:|:-------:|:-----:|
 1 | Sachin | Tendulkar | 40 | 11111 | 100000 | Mumbai | 10 |
 2 | Rahul | Dravid | 40 | 22222 | 80000 | Bengaluru | 20 |
