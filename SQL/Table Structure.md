@@ -30,7 +30,7 @@ Location_Id int
 );
 
 ##Database:
-Dept_id | Department_name | Manager_id | Location_id
+Dept_Id | Department_Name | Manager_Id | Location_Id
 |:------:|:---------------:|:----------:|:---------:|
 10 | Executive | 100 | 1100 |
 20 | Marketing | 200 | 2200 |
